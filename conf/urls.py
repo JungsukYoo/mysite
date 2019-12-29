@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from bookmark.views import BookmarkLV, BookmarkDV
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Class-based views for Bookmark app
+    path('bookmark/', BookmarkLV.as_view(), name='index'),
+    path('bookmark/<pk>/', BookmarkDV.as_view(), name='detail'),
 ]
