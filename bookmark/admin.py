@@ -3,9 +3,6 @@ from .models import Bookmark
 
 
 # Register your models here.
-
+@admin.register(Bookmark)
 class BookmarkAdmin(admin.ModelAdmin):
-    list_display = ('title', 'url')
-
-
-admin.site.register(Bookmark, BookmarkAdmin)
+    list_display = ('id', 'title', 'url')
